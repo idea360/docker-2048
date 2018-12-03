@@ -18,9 +18,8 @@ pipeline {
           HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
         }
         steps {
-          container('nodejs') {
-            sh "npm install"
-            sh "CI=true DISPLAY=:99 npm test"
+          container('echo') {
+            sh "echo building..."
 
             sh 'export VERSION=$PREVIEW_VERSION && skaffold build -f skaffold.yaml'
 
@@ -56,8 +55,7 @@ pipeline {
             }
           }
           container('nodejs') {
-            sh "npm install"
-            sh "CI=true DISPLAY=:99 npm test"
+            sh "echo building..."
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
 
