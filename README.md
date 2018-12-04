@@ -1,5 +1,10 @@
 # docker-2048
 
+Fork of alexwhen/docker-2048(https://github.com/alexwhen/docker-2048) with:
+* updated 2048 code - gabrielecirulli/2048(https://github.com/gabrielecirulli/2048)
+* Updated Dockerfile to make nginx be able to be started.
+* Add default Nginx site as default site in install just returns a 404
+
 simple is better
 
 a smaller docker version of 2048
@@ -26,12 +31,13 @@ Base on nginx
 
 # run the docker container with your own build
 
-    git clone https://github.com/alexwhen/docker-2048.git
+    git clone https://github.com/idea360/docker-2048.git
     docker build -t "docker-2048" .
     docker run -d -p 8080:80 docker-2048
 
 # run the docker container by pulling the image directly
 
+    *Seems this image still works*
     docker run -d -p 8080:80 alexwhen/docker-2048
 
 # Access the game
